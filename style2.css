@@ -1,0 +1,146 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+body{
+    perspective: 600px;
+}
+.list-product{
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+.list-product li{
+    margin: 10px 20px;
+}
+ul li:hover{
+    font-size: 20px;
+    font-weight: 700;
+}
+.container3 {
+    width: 80%;
+    background-color: rgb(248, 248, 248);
+    display: grid;
+    grid-template-columns: repeat(3,20%);
+    grid-row-gap: 4em;
+    grid-column-gap: 4em;
+    place-content: center;
+    margin: auto;
+    color:white;
+
+
+}
+.card{
+    width: 250px;
+    height: 450px;
+    background-color: rgb(62, 34, 34) ;
+    margin: 50px auto;
+    overflow: hidden;
+    border-radius: 10px;
+
+
+
+}
+
+.bg{
+    width: 250px;
+    height: 300px;
+    background-image:url(image/library-with-books.jpg);
+    background-position: center;
+    background-size: cover; 
+    position: relative;
+
+}
+.flip{
+    position: absolute;
+    width: 250px;
+    height: 300px;
+    transform-style: preserve-3d;
+    transition: 2s;
+
+
+
+}
+.front{
+    position: absolute;
+    width: 250px;
+    height: 300px;
+    background-color: rgba(235, 221, 221, 0);
+    backface-visibility: hidden;
+    z-index: 1;
+}
+.back{
+    position: absolute;
+    width: 250px;
+    height: 300px;
+    background-image: url(image/ayman.jpeg);
+    background-position: center;
+    background-size: cover; 
+    z-index: 1;
+    opacity: 0;
+    transform: rotateY(180deg);
+    transition: 2s;
+}
+.bg:hover .flip{
+    transform: rotateY(180deg);
+}
+.bg:hover .back{
+    opacity: 1;
+}
+
+/* i{
+    font-size: 50px;
+    color: rgb(38, 46, 89);
+} */
+.active{
+    color: yellow;
+
+}
+
+
+.product-overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform:scalex(0);
+    opacity: 0.9;
+    transition: transform 0.2s;
+}
+.product-overlay ul{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.product-overlay ul li{
+    width: 40px;
+    height: 40px;
+    background-color: red;
+    display: inline-block;
+    text-align: center;
+}
+.product-overlay ul li i{
+    color: #fff;
+    line-height: 40px;
+}
+.product-item:hover .product-overlay{
+    transform: scalex(1);
+}
+.product-item i.active {
+    color: yellow;
+}
+.no-active{
+    color: yellow;
+}
+
+.product-info span{
+    display: block;
+    margin: 5px 0;
+}
+.product-info i{
+    margin-top: 10px;}
+
+
+    
